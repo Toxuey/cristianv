@@ -1,0 +1,35 @@
+---
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro Basics</title>
+  </head>
+
+  <body class="font-sans antialiased">
+    <header class="border-b border-slate-200">
+      <div class="mx-auto max-w-3xl px-6 py-4 text-sm text-slate-700">
+        <nav class="flex flex-wrap gap-x-6 gap-y-2">
+          <a href="/" class="underline decoration-slate-300 hover:decoration-slate-600">Inicio</a>
+          <a href="/about" class="underline decoration-slate-300 hover:decoration-slate-600">Sobre mí</a>
+          <a href="/projects" class="underline decoration-slate-300 hover:decoration-slate-600">Proyectos</a>
+          <a href="mailto:contacto@cristianvillamizar.com" class="underline decoration-slate-300 hover:decoration-slate-600">Contacto</a>
+        </nav>
+      </div>
+    </header>
+    <slot />
+    <footer class="mt-16 border-t border-slate-200 py-6 text-center text-sm text-slate-500">
+      <p class="px-6 leading-relaxed">
+        <span class="block sm:inline">© {new Date().getFullYear()} · Cristian Villamizar</span>
+        <span class="block sm:inline">Gestión de instalaciones · Colombia</span>
+      </p>
+    </footer>
+  </body>
+</html>

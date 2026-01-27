@@ -1,5 +1,15 @@
 ---
 import "../styles/global.css";
+
+const {
+  title = "Cristian Villamizar | Gestión de Instalaciones y Operaciones",
+  description = "Profesional en gestión de instalaciones con más de 10 años de experiencia en operaciones, mantenimiento, control de activos y permisos de trabajo.",
+  ogTitle = "Cristian Villamizar | Gestión de Instalaciones",
+  ogDescription = "Perfil profesional en gestión de instalaciones, operaciones y control operativo.",
+} = Astro.props;
+
+const siteUrl = "https://cristianvillamizar.com";
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
 ---
 
 <!doctype html>
@@ -7,32 +17,81 @@ import "../styles/global.css";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Cristian Villamizar — Gestión de instalaciones</title>
+
+    <!-- SEO básico -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Canonical dinámico -->
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph básico -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Cristian Villamizar" />
+    <meta property="og:title" content={ogTitle} />
     <meta
-      name="description"
-      content="Perfil profesional de Cristian Villamizar en gestión de instalaciones. Proyectos internos orientados a control operativo, trazabilidad y cumplimiento."
+      property="og:description"
+      content={ogDescription}
     />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:locale" content="es_CO" />
+
+    <!-- Generator -->
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Schema Person -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Cristian Villamizar",
+        "jobTitle": "Profesional en Gestión de Instalaciones",
+        "url": "https://cristianvillamizar.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "CO"
+        }
+      }
+    </script>
   </head>
 
-  <body class="font-sans antialiased">
+  <body class="font-sans antialiased text-slate-900">
     <header class="border-b border-slate-200">
       <div class="mx-auto max-w-3xl px-6 py-4 text-sm text-slate-700">
         <nav class="flex flex-wrap gap-x-6 gap-y-2">
-          <a href="/" class="underline decoration-slate-300 hover:decoration-slate-600">Inicio</a>
-          <a href="/about" class="underline decoration-slate-300 hover:decoration-slate-600">Sobre mí</a>
-          <a href="/projects" class="underline decoration-slate-300 hover:decoration-slate-600">Proyectos</a>
-          <a href="mailto:contacto@cristianvillamizar.com" class="underline decoration-slate-300 hover:decoration-slate-600">Contacto</a>
+          <a href="/" class="underline decoration-slate-300 hover:decoration-slate-600">
+            Inicio
+          </a>
+          <a href="/about" class="underline decoration-slate-300 hover:decoration-slate-600">
+            Sobre mí
+          </a>
+          <a href="/projects" class="underline decoration-slate-300 hover:decoration-slate-600">
+            Proyectos
+          </a>
+          <a
+            href="mailto:contacto@cristianvillamizar.com"
+            class="underline decoration-slate-300 hover:decoration-slate-600"
+          >
+            Contacto
+          </a>
         </nav>
       </div>
     </header>
+
     <slot />
+
     <footer class="mt-16 border-t border-slate-200 py-6 text-center text-sm text-slate-500">
       <p class="px-6 leading-relaxed">
-        <span class="block sm:inline">© {new Date().getFullYear()} · Cristian Villamizar</span>
-        <span class="block sm:inline">Gestión de instalaciones · Colombia</span>
+        <span class="block sm:inline">
+          © {new Date().getFullYear()} · Cristian Villamizar
+        </span>
+        <span class="block sm:inline">
+          Gestión de instalaciones · Colombia
+        </span>
       </p>
     </footer>
   </body>

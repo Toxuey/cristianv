@@ -1,7 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
-import profilePhoto from "../assets/cristian-villamizar-facilities-management-colombia.webp";
 ---
 
 <Layout
@@ -13,10 +11,12 @@ import profilePhoto from "../assets/cristian-villamizar-facilities-management-co
   <main class="mx-auto max-w-3xl px-6 py-12 text-slate-900">
     <section class="grid items-center gap-10 md:grid-cols-2">
       <div>
-        <Image
-          src={profilePhoto}
+        <img
+          src="/images/cristian-villamizar.webp"
           alt="Foto profesional de Cristian Villamizar especialista en Facilities Management"
-          width={320}
+          width="320"
+          height="427"
+          loading="lazy"
           class="w-full max-w-xs rounded-xl border border-slate-200 shadow-sm"
         />
       </div>

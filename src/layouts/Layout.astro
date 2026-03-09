@@ -10,6 +10,7 @@ const {
 
 const siteUrl = "https://cristianvillamizar.com";
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
+const ogImage = `${siteUrl}/images/cristian-villamizar.webp`;
 ---
 
 <!doctype html>
@@ -39,6 +40,13 @@ const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
     />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:locale" content="es_CO" />
+    <meta property="og:image" content={ogImage} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={ogTitle} />
+    <meta name="twitter:description" content={ogDescription} />
+    <meta name="twitter:image" content={ogImage} />
 
     <!-- Generator -->
     <meta name="generator" content={Astro.generator} />
@@ -83,10 +91,7 @@ const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
           <a href="/projects" class="underline decoration-slate-300 hover:decoration-slate-600">
             Proyectos
           </a>
-          <a
-            href="mailto:contacto@cristianvillamizar.com"
-            class="underline decoration-slate-300 hover:decoration-slate-600"
-          >
+          <a href="/contacto" class="underline decoration-slate-300 hover:decoration-slate-600">
             Contacto
           </a>
         </nav>

@@ -1,60 +1,116 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import profilePhoto from "../assets/cristian-villamizar-facilities-management-colombia.webp";
 ---
 
 <Layout
   title="Sobre mí | Cristian Villamizar"
-  description="Perfil profesional de Cristian Villamizar en gestión de instalaciones, con enfoque operativo y experiencia en procesos, control y trazabilidad."
+  description="Cristian Villamizar – ingeniero electrónico especializado en gestión de instalaciones, operaciones técnicas y mejora de procesos operativos."
   ogTitle="Sobre mí | Cristian Villamizar"
-  ogDescription="Perfil profesional en gestión de instalaciones, enfoque operativo y experiencia en procesos y control técnico."
+  ogDescription="Ingeniero electrónico especializado en gestión de instalaciones, operaciones técnicas y mejora de procesos operativos."
 >
   <main class="mx-auto max-w-3xl px-6 py-12 text-slate-900">
-    <!-- Header -->
-    <header class="space-y-3">
-      <h1 class="text-2xl font-semibold text-slate-900">Sobre mí</h1>
+    <section class="grid items-center gap-10 md:grid-cols-2">
+      <div>
+        <Image
+          src={profilePhoto}
+          alt="Foto profesional de Cristian Villamizar especialista en Facilities Management"
+          width={320}
+          class="w-full max-w-xs rounded-xl border border-slate-200 shadow-sm"
+        />
+      </div>
+
+      <div class="space-y-4">
+        <h1 class="text-3xl font-semibold text-slate-900">
+          Cristian Villamizar | Facilities Management y Operaciones Técnicas
+        </h1>
+        <p class="text-base leading-relaxed text-slate-700">
+          Ingeniero electrónico con experiencia en gestión de instalaciones y operación técnica.
+          Trabajo en estructuración de procesos, control operativo y uso de herramientas digitales
+          para mejorar tiempos de respuesta, trazabilidad y continuidad del servicio.
+        </p>
+        <ul class="list-disc space-y-2 pl-5 text-sm text-slate-700">
+          <li>+10 años en operaciones y facilities management</li>
+          <li>Ingeniería electrónica</li>
+          <li>Automatización industrial</li>
+          <li>Desarrollo de herramientas web para gestión operativa</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="mt-12 space-y-3">
+      <h2 class="text-xl font-semibold text-slate-900">Perfil profesional</h2>
       <p class="text-base leading-relaxed text-slate-700">
-        Profesional de gestión de instalaciones con enfoque operativo, orientado a mejorar procesos,
-        control y trazabilidad en entornos técnicos y de operación.
+        Cuento con trayectoria en facilities management y gestión de mantenimiento en entornos administrativos y técnicos.
+        Mi trabajo se enfoca en operaciones técnicas con criterios de riesgo, cumplimiento y continuidad. He liderado
+        iniciativas para fortalecer procesos operativos mediante control técnico, estandarización de flujos y seguimiento
+        de indicadores clave. También he implementado soluciones digitales para mejorar trazabilidad en órdenes de trabajo,
+        permisos, activos y reportes, logrando mayor visibilidad para auditoría y toma de decisiones.
       </p>
-    </header>
+    </section>
 
-    <!-- Perfil -->
-    <section class="mt-10 space-y-3">
-      <h2 class="text-lg font-semibold text-slate-900">Perfil profesional</h2>
+    <section class="mt-12 space-y-3">
+      <h2 class="text-xl font-semibold text-slate-900">Experiencia en operaciones y facilities</h2>
+      <ul class="list-disc space-y-2 pl-5 text-sm text-slate-700">
+        <li>Gestión de mantenimiento en entornos corporativos</li>
+        <li>Operaciones técnicas y continuidad del servicio</li>
+        <li>Control de activos y trazabilidad operativa</li>
+        <li>Implementación de procesos y control técnico</li>
+        <li>Desarrollo de herramientas digitales para operaciones</li>
+      </ul>
+    </section>
+
+    <section class="mt-12 space-y-4">
+      <h2 class="text-xl font-semibold text-slate-900">Áreas de enfoque</h2>
+      <div class="grid gap-3 text-sm text-slate-700 md:grid-cols-2">
+        <p>Gestión de instalaciones (Facilities Management)</p>
+        <p>Mejora de procesos operativos</p>
+        <p>Control técnico y seguimiento de indicadores</p>
+        <p>Gestión de mantenimiento</p>
+        <p>Automatización industrial</p>
+        <p>Desarrollo de herramientas internas</p>
+      </div>
+    </section>
+
+    <section class="mt-12 space-y-3">
+      <h2 class="text-xl font-semibold text-slate-900">Formación</h2>
+      <ul class="list-disc space-y-2 pl-5 text-sm text-slate-700">
+        <li>Tecnólogo en Automatización Industrial</li>
+        <li>Ingeniero Electrónico</li>
+        <li>Especialización en gestión de mantenimiento</li>
+      </ul>
+    </section>
+
+    <section class="mt-12 space-y-3">
+      <h2 class="text-xl font-semibold text-slate-900">Qué hago actualmente</h2>
       <p class="text-sm leading-relaxed text-slate-700">
-        Cuento con más de 10 años de experiencia en operaciones de facilities, con formación en
-        automatización industrial, ingeniería electrónica y gestión de mantenimiento. A lo largo de
-        mi trayectoria he trabajado en la mejora de procesos operativos, control técnico y
-        seguimiento de indicadores, desarrollando aplicaciones web como soporte a la gestión diaria
-        de solicitudes, reportes técnicos, control de activos y seguimiento presupuestal.
+        Actualmente gestiono operaciones técnicas, lidero mejora de procesos y desarrollo herramientas digitales
+        para facilitar control, trazabilidad y seguimiento en mantenimiento y facilities. El objetivo es sostener
+        continuidad operativa con información confiable para decidir con rapidez.
+      </p>
+      <p class="text-sm leading-relaxed text-slate-700">
+        También comparto experiencias y análisis en el <a href="/blog" class="underline decoration-slate-300 hover:decoration-slate-600">blog</a>,
+        documento casos aplicados en <a href="/projects" class="underline decoration-slate-300 hover:decoration-slate-600">proyectos</a>
+        y mantengo un canal directo en <a href="/contacto" class="underline decoration-slate-300 hover:decoration-slate-600">contacto</a>.
       </p>
     </section>
 
-    <!-- Formación -->
-    <section class="mt-10 space-y-3">
-      <h2 class="text-lg font-semibold text-slate-900">Formación</h2>
-      <ul class="list-disc space-y-2 pl-5 text-sm text-slate-700">
-        <li>Tecnólogo en Automatización Industrial.</li>
-        <li>Ingeniero Electrónico.</li>
-        <li>Especialista en gestión de mantenimiento.</li>
-      </ul>
-    </section>
-
-    <!-- Enfoque -->
-    <section class="mt-10 space-y-3">
-      <h2 class="text-lg font-semibold text-slate-900">Enfoque de trabajo</h2>
-      <ul class="list-disc space-y-2 pl-5 text-sm text-slate-700">
-        <li>Procesos claros con responsables definidos y seguimiento visible.</li>
-        <li>Uso de datos confiables para priorizar recursos y decisiones operativas.</li>
-        <li>Control de riesgos y cumplimiento en actividades críticas.</li>
-        <li>Mejora continua basada en resultados y retroalimentación del equipo.</li>
-      </ul>
-    </section>
-
-    <!-- Ubicación -->
-    <section class="mt-10 space-y-3">
-      <h2 class="text-lg font-semibold text-slate-900">Ubicación</h2>
-      <p class="text-sm leading-relaxed text-slate-700">Colombia.</p>
+    <section class="mt-12 space-y-4">
+      <h2 class="text-xl font-semibold text-slate-900">Contacto profesional</h2>
+      <p class="text-sm leading-relaxed text-slate-700">
+        Disponible para conversaciones técnicas, análisis de procesos y oportunidades de mejora
+        en gestión de instalaciones y digitalización de procesos operativos.
+      </p>
+      <p class="text-sm text-slate-700">
+        Correo:
+        <a
+          href="mailto:contacto@cristianvillamizar.com"
+          class="underline decoration-slate-300 hover:decoration-slate-600"
+        >
+          contacto@cristianvillamizar.com
+        </a>
+      </p>
     </section>
   </main>
 </Layout>

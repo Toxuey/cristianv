@@ -1,0 +1,86 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title="Gestión de repuestos críticos en Facilities Management | Blog"
+  description="Cómo estructurar un inventario de repuestos basado en criticidad de activos, tiempos de reabastecimiento y control de rotación para evitar paradas operativas."
+  ogTitle="Gestión de repuestos críticos en Facilities Management"
+  ogDescription="Estrategias prácticas para equilibrar disponibilidad operativa y capital de trabajo en infraestructura y hardservices."
+>
+  <main class="mx-auto max-w-3xl px-6 py-12 text-slate-900">
+    <article class="space-y-6">
+      <header class="space-y-3">
+        <p class="text-sm uppercase tracking-wide text-slate-500">Blog</p>
+        <h1 class="text-2xl font-semibold text-slate-900">
+          Gestión de repuestos críticos: cómo balancear disponibilidad y costo en Facilities
+        </h1>
+        <p class="text-sm text-slate-500">Publicado: 13 de agosto de 2026</p>
+      </header>
+
+      <p class="text-base leading-relaxed text-slate-700">
+        Uno de los dilemas recurrentes en Facilities Management es el control de repuestos. 
+        Tener un stock excesivo inmoviliza capital y genera obsolescencia; no tener el repuesto 
+        adecuado cuando falla un equipo crítico puede detener la operación de un edificio o planta 
+        por días. La solución no es guardar de todo, sino clasificar con criterio técnico.
+      </p>
+
+      <section class="space-y-3">
+        <h2 class="text-lg font-semibold text-slate-900">1. Matriz de criticidad de repuestos</h2>
+        <p class="text-sm leading-relaxed text-slate-700">
+          No todos los insumos tienen el mismo impacto. La clasificación debe considerar dos variables 
+          principales: el impacto operativo de la falla del activo y el tiempo de entrega del proveedor (Lead Time).
+        </p>
+        <ul class="list-disc space-y-2 pl-5 text-sm text-slate-700">
+          <li><strong>Alta criticidad / Alto Lead Time:</strong> Componentes de importación o fabricación especial (ej. tarjetas electrónicas de chillers, breakers de gran capacidad). Deben mantenerse en stock de seguridad local.</li>
+          <li><strong>Alta criticidad / Bajo Lead Time:</strong> Insumos comerciales de alta rotación (ej. filtros de aire, correas, rodamientos estándar). Se gestionan mediante acuerdos marco con entregas en menos de 24 horas.</li>
+          <li><strong>Baja criticidad / Alto o Bajo Lead Time:</strong> Elementos cosméticos o secundarios. Se compran bajo demanda para no saturar el almacén.</li>
+        </ul>
+      </section>
+
+      <section class="space-y-3">
+        <h2 class="text-lg font-semibold text-slate-900">2. Errores habituales en la bodega de Facilities</h2>
+        <ul class="list-disc space-y-2 pl-5 text-sm text-slate-700">
+          <li><strong>Falta de codificación única:</strong> Registrar la misma pieza con nombres distintos según el técnico, generando compras duplicadas.</li>
+          <li><strong>Consumo "fantasma":</strong> Retirar repuestos para atenciones de urgencia sin vincularlos a una Orden de Trabajo (OT) en el sistema.</li>
+          <li><strong>Insumos vencidos o deteriorados:</strong> Correas resecas, empaquetaduras vencidas o lubricantes contaminados por mal almacenamiento.</li>
+        </ul>
+      </section>
+
+      <section class="space-y-3">
+        <h2 class="text-lg font-semibold text-slate-900">3. De la bodega física al control digital</h2>
+        <p class="text-sm leading-relaxed text-slate-700">
+          Digitalizar la gestión de repuestos no requiere software costoso de entrada, sino disciplina operativa. 
+          Un flujo eficiente debe vincular el inventario directamente con el sistema de órdenes de trabajo:
+        </p>
+        <ol class="list-decimal space-y-2 pl-5 text-sm text-slate-700">
+          <li>Descontar automáticamente el stock cuando el técnico cierra la OT.</li>
+          <li>Establecer puntos de reorden (Stock Mínimo) automáticos con alertas de compra.</li>
+          <li>Registrar la trazabilidad del repuesto: equipo en el que se instaló, fecha y técnico responsable.</li>
+        </ol>
+      </section>
+
+      <section class="space-y-3">
+        <h2 class="text-lg font-semibold text-slate-900">4. Estrategia con proveedores y contratistas</h2>
+        <p class="text-sm leading-relaxed text-slate-700">
+          Cuando el mantenimiento está tercerizado, la responsabilidad del inventario suele ser una zona gris. 
+          Es recomendable exigir al proveedor un "stock de contingencia en sitio" para activos vitales dentro 
+          del contrato, o definir en el SLA tiempos máximos de consecución de repuestos clave bajo penalización.
+        </p>
+      </section>
+
+      <section class="space-y-3">
+        <h2 class="text-lg font-semibold text-slate-900">Conclusión</h2>
+        <p class="text-sm leading-relaxed text-slate-700">
+          Garantizar la disponibilidad de la infraestructura no significa llenar bodegas de repuestos sin control. 
+          Una gestión moderna de inventario en Facilities combina análisis de criticidad, integración con las órdenes 
+          de trabajo y contratos bien estructurados con proveedores para proteger la continuidad operativa al menor costo posible.
+        </p>
+      </section>
+
+      <p class="text-sm text-slate-600">
+        <a href="/blog" class="underline decoration-slate-300 hover:decoration-slate-600">Volver al blog</a>
+      </p>
+    </article>
+  </main>
+</Layout>

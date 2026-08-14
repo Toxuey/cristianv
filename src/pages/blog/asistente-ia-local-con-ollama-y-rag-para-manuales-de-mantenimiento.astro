@@ -1,0 +1,82 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title="Asistente de IA local con Ollama y RAG para manuales de mantenimiento | Blog"
+  description="Cómo implementar un asistente privado usando Ollama y RAG para consultar manuales técnicos, planos e instructivos de activos de Facilities sin depender de la nube."
+  ogTitle="IA Local y RAG para manuales de mantenimiento en Facilities"
+  ogDescription="Consulta rápida de datos técnicos, torque, códigos de error y procedimientos usando LLMs locales sin comprometer la privacidad de la información."
+>
+  <main class="mx-auto max-w-3xl px-6 py-12 text-slate-900">
+    <article class="space-y-6">
+      <header class="space-y-3">
+        <p class="text-sm uppercase tracking-wide text-slate-500">Blog</p>
+        <h1 class="text-2xl font-semibold text-slate-900">
+          Asistente de IA local con Ollama y RAG: consulta de manuales e instructivos técnicos de forma privada
+        </h1>
+        <p class="text-sm text-slate-500">Publicado: 14 de agosto de 2026</p>
+      </header>
+
+      <p class="text-base leading-relaxed text-slate-700">
+        Cuando un técnico necesita diagnosticar un fallo en un chiller, una subestación o una bomba de agua, buscar la respuesta entre cientos de páginas de manuales en PDF toma tiempo valioso. Los modelos del lenguaje (LLM) resuelven esto al responder preguntas directas, pero subirlos a servicios en la nube genera dudas de privacidad o costos de API. La combinación de <strong>Ollama</strong> (IA local) con <strong>RAG</strong> (Generación Aumentada por Recuperación) ofrece la solución perfecta: respuestas precisas, inmediatas y 100% privadas.
+      </p>
+
+      <section class="space-y-3">
+        <h2 class="text-lg font-semibold text-slate-900">1. ¿Qué es RAG y por qué cambia la gestión técnica?</h2>
+        <p class="text-sm leading-relaxed text-slate-700">
+          Un LLM estándar puede inventar información o desconocer el modelo exacto de tus activos. RAG actúa como un "puente" entre el modelo de IA y tu biblioteca de documentos técnicos.
+        </p>
+        <ul class="list-disc space-y-2 pl-5 text-sm text-slate-700">
+          <li><strong>Paso 1 (Indexación):</strong> Los manuales en PDF, guías del fabricante e instructivos de seguridad se fragmentan y guardan en una base de datos vectorial.</li>
+          <li><strong>Paso 2 (Búsqueda):</strong> Cuando el usuario pregunta <em>"¿Cuál es el torque de apriete para la bomba X?"</em>, la base vectorial busca los fragmentos exactos del manual.</li>
+          <li><strong>Paso 3 (Respuesta):</strong> La IA sintetiza la respuesta utilizando <strong>únicamente</strong> la información encontrada en tus archivos.</li>
+        </ul>
+      </section>
+
+      <section class="space-y-3">
+        <h2 class="text-lg font-semibold text-slate-900">2. Por qué usar Ollama y modelos Open Source en la operación</h2>
+        <p class="text-sm leading-relaxed text-slate-700">
+          Desplegar modelos open source (como Llama 3 o Qwen) mediante herramientas como Ollama en un servidor local o laptop de la sede aporta beneficios directos para Facilities:
+        </p>
+        <ul class="list-disc space-y-2 pl-5 text-sm text-slate-700">
+          <li><strong>Privacidad de datos total:</strong> Planos de infraestructura, diagramas unifilares e instructivos internos no salen del entorno de la empresa.</li>
+          <li><strong>Funcionamiento sin internet:</strong> En cuartos técnicos bajo tierra, sótanos o zonas de baja cobertura, el sistema sigue funcionando localmente.</li>
+          <li><strong>Sin costo por token:</strong> A diferencia de las APIs comerciales, no hay pagos por consulta ni límites de volumen.</li>
+        </ul>
+      </section>
+
+      <section class="space-y-3">
+        <h2 class="text-lg font-semibold text-slate-900">3. Casos de uso prácticos en campo</h2>
+        <ul class="list-disc space-y-2 pl-5 text-sm text-slate-700">
+          <li><strong>Diagnóstico ágil de alarmas:</strong> Ingresar el código de error que muestra el panel del equipo para recibir de inmediato los pasos de solución de problemas del manual.</li>
+          <li><strong>Verificación de parámetros de mantenimiento:</strong> Consultar rápidamente presiones de trabajo, tipos de lubricante recomendados y frecuencias de cambio.</li>
+          <li><strong>Acreditación y auditorías:</strong> Consultar los pasos de seguridad e EPP obligatorios antes de emitir un permiso de trabajo para un activo específico.</li>
+        </ul>
+      </section>
+
+      <section class="space-y-3">
+        <h2 class="text-lg font-semibold text-slate-900">4. Arquitectura básica recomendada</h2>
+        <p class="text-sm leading-relaxed text-slate-700">
+          Estructurar un piloto no requiere infraestructura compleja:
+        </p>
+        <ol class="list-decimal space-y-2 pl-5 text-sm text-slate-700">
+          <li><strong>Motor LLM local:</strong> Ollama corriendo un modelo liviano pero potente.</li>
+          <li><strong>Orquestador/UI:</strong> Herramientas como AnythingLLM, Open WebUI o scripts en Python con LangChain/LlamaIndex.</li>
+          <li><strong>Base de datos vectorial:</strong> ChromaDB o Qdrant locales para indexar los PDF de los activos.</li>
+        </ol>
+      </section>
+
+      <section class="space-y-3">
+        <h2 class="text-lg font-semibold text-slate-900">Conclusión</h2>
+        <p class="text-sm leading-relaxed text-slate-700">
+          Un asistente local con RAG no reemplaza el criterio del técnico, pero elimina el tiempo perdido buscando información dispersa. Convertir los manuales estáticos en una base de conocimiento interactiva y privada es uno de los pasos más prácticos y rentables para modernizar las operaciones de Facilities Management.
+        </p>
+      </section>
+
+      <p class="text-sm text-slate-600">
+        <a href="/blog" class="underline decoration-slate-300 hover:decoration-slate-600">Volver al blog</a>
+      </p>
+    </article>
+  </main>
+</Layout>

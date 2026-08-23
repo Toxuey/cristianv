@@ -1,0 +1,86 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title="Monitoreo IoT con LoRaWAN en Facilities Management | Blog"
+  description="Cómo desplegar sensores inalámbricos LoRaWAN para monitorear variables críticas (vibración, fugas, energía y temperatura) en edificios e industrias sin cableados invasivos."
+  ogTitle="Monitoreo IoT con LoRaWAN en Facilities Management"
+  ogDescription="Estrategias prácticas de conectividad inalámbrica de bajo consumo para digitalizar infraestructura crítica y alimentar sistemas predictivos sin depender del WiFi corporativo."
+>
+  <main class="mx-auto max-w-3xl px-6 py-12 text-slate-900">
+    <article class="space-y-6">
+      <header class="space-y-3">
+        <p class="text-sm uppercase tracking-wide text-slate-500">Blog</p>
+        <h1 class="text-2xl font-semibold text-slate-900">
+          Sensores IoT y LoRaWAN en Facilities: monitoreo de infraestructura crítica sin obras ni cableados costosos
+        </h1>
+        <p class="text-sm text-slate-500">Publicado: 23 de agosto de 2026</p>
+      </header>
+
+      <p class="text-base leading-relaxed text-slate-700">
+        Uno de los mayores frenos para implementar mantenimiento predictivo y monitoreo en tiempo real en Facilities Management es la infraestructura física. Cablear sensores en edificios en operación implica romper techos, pasar ductos por montantes saturadas, gestionar permisos de trabajo invasivos y asumir costos de instalación que muchas veces superan el valor del propio sensor. Por otro lado, usar el WiFi corporativo suele chocar con restricciones estrictas de ciberseguridad del equipo de IT y con un consumo de batería insostenible. Aquí es donde la tecnología <strong>LoRaWAN</strong> se convierte en el estándar de conectividad para la operación técnica.
+      </p>
+
+      <section class="space-y-3">
+        <h2 class="text-lg font-semibold text-slate-900">1. ¿Por qué LoRaWAN encaja de forma natural en Facilities?</h2>
+        <p class="text-sm leading-relaxed text-slate-700">
+          LoRaWAN (Long Range Wide Area Network) es un protocolo de comunicación inalámbrica diseñado específicamente para telemetría: enviar paquetes pequeños de datos a largas distancias con un consumo energético mínimo.
+        </p>
+        <ul class="list-disc space-y-2 pl-5 text-sm text-slate-700">
+          <li><strong>Penetración en estructuras densas:</strong> Su frecuencia de radio sub-GHz atraviesa sótanos, cuartos de bombas bajo tierra, fosos de ascensores y muros de hormigón armado donde el WiFi y la señal celular no llegan.</li>
+          <li><strong>Autonomía de baterías (5 a 10 años):</strong> Los sensores duermen la mayor parte del tiempo y solo despiertan segundos para transmitir lecturas o alarmas, eliminando la necesidad de alimentación eléctrica externa.</li>
+          <li><strong>Independencia de la red de IT:</strong> Los datos viajan por una red de radio propia hacia un gateway local con módem 4G o salida dedicada, evitando tocar la red interna corporativa y acelerando la aprobación de seguridad.</li>
+          <li><strong>Alcance masivo con mínima infraestructura:</strong> Un único gateway bien ubicado en la azotea o cuarto técnico central puede dar cobertura a una torre de 20 pisos o a un complejo logístico entero.</li>
+        </ul>
+      </section>
+
+      <section class="space-y-3">
+        <h2 class="text-lg font-semibold text-slate-900">2. Casos de uso de alto impacto operativo</h2>
+        <p class="text-sm leading-relaxed text-slate-700">
+          No se trata de sensorizar todo, sino de colocar "ojos digitales" en los puntos donde una falla no detectada a tiempo paraliza el negocio:
+        </p>
+        <ul class="list-disc space-y-2 pl-5 text-sm text-slate-700">
+          <li><strong>Detección temprana de fugas de agua:</strong> Cables y sondas sensoriales bajo el piso falso de centros de datos, cuartos de tableros eléctricos y ductos hidrosanitarios para alertar antes de que el agua cause un cortocircuito.</li>
+          <li><strong>Vibración y temperatura superficial en motores y bombas:</strong> Sensores magnéticos adheridos a chillers, bombas de recirculación y extractores que alertan sobre desalineación, soltura mecánica o desgaste prematuro de rodamientos.</li>
+          <li><strong>Submedición energética no invasiva:</strong> Transformadores de corriente (pinzas CT) inalámbricos para medir consumos de tableros secundarios y climatización sin desconectar líneas eléctricas.</li>
+          <li><strong>Calidad de aire interior (IAQ) y confort:</strong> Monitoreo continuo de CO2, temperatura, humedad y partículas en áreas administrativas para ajustar la ventilación mecánica y optimizar el consumo de HVAC.</li>
+          <li><strong>Niveles de tanques y presión de red:</strong> Sensores de presión hidrostática y ultrasónicos para monitorear tanques de agua potable, trampas de grasa o sistemas contra incendios sin rondas manuales.</li>
+        </ul>
+      </section>
+
+      <section class="space-y-3">
+        <h2 class="text-lg font-semibold text-slate-900">3. Arquitectura técnica recomendada: de la señal al dato accionable</h2>
+        <p class="text-sm leading-relaxed text-slate-700">
+          Una arquitectura robusta, escalable y sin costos ocultos de licencias se estructura en cuatro capas clave:
+        </p>
+        <ol class="list-decimal space-y-2 pl-5 text-sm text-slate-700">
+          <li><strong>Capa de campo (Sensores):</strong> Nodos LoRaWAN comerciales con grado de protección IP65/IP67 para ambientes industriales.</li>
+          <li><strong>Capa de recepción (Gateway LoRaWAN):</strong> Antena concentradora conectada a la red por Ethernet o tarjeta SIM dedicada.</li>
+          <li><strong>Servidor de red (LNS - LoRaWAN Network Server):</strong> Plataformas como <em>ChirpStack</em> (despliegue local y open-source) o <em>The Things Network (TTN)</em> para gestionar la autenticación y desencapsulado de paquetes.</li>
+          <li><strong>Visualización y automatización (GMAO / Dashboard):</strong> Los datos se integran mediante MQTT o Webhooks hacia bases de datos de series temporales (InfluxDB/PostgreSQL), paneles en Grafana y disparadores automáticos que generan órdenes de trabajo preventivas o envían alertas a WhatsApp/Telegram.</li>
+        </ol>
+      </section>
+
+      <section class="space-y-3">
+        <h2 class="text-lg font-semibold text-slate-900">4. Errores habituales al implementar proyectos de sensorización</h2>
+        <ul class="list-disc space-y-2 pl-5 text-sm text-slate-700">
+          <li><strong>Frecuencia de muestreo innecesariamente alta:</strong> Configurar un sensor de temperatura ambiente para enviar datos cada 10 segundos agota la batería en meses en lugar de años; para la mayoría de variables en FM, intervalos de 10 a 15 minutos son ideales.</li>
+          <li><strong>Acumular datos sin definir disparadores de acción:</strong> Ver gráficos en un monitor no reduce fallas. Cada variable crítica debe tener umbrales claros de alerta amarilla (inspección) y roja (atención inmediata con OT asociada).</li>
+          <li><strong>Descuidar la calibración y montaje mecánico:</strong> Un sensor de vibración mal fijado a la carcasa del motor generará lecturas con ruido que invalidarán cualquier análisis predictivo.</li>
+        </ul>
+      </section>
+
+      <section class="space-y-3">
+        <h2 class="text-lg font-semibold text-slate-900">Conclusión</h2>
+        <p class="text-sm leading-relaxed text-slate-700">
+          La conectividad inalámbrica de bajo consumo derriba la barrera de entrada para digitalizar edificios e industrias existentes. Implementar una red LoRaWAN en la sede permite al equipo de Facilities pasar de inspecciones visuales esporádicas a un monitoreo continuo de activos críticos, protegiendo la continuidad del negocio con una inversión ágil y sin impacto en la operación diaria.
+        </p>
+      </section>
+
+      <p class="text-sm text-slate-600">
+        <a href="/blog" class="underline decoration-slate-300 hover:decoration-slate-600">Volver al blog</a>
+      </p>
+    </article>
+  </main>
+</Layout>
